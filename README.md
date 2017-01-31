@@ -1,5 +1,5 @@
-# Pkjs Webapp Starter
-Pkjs Webapp Starter is a front-end web application template for professional web development. 
+#Webapp Starter
+Webapp Starter is a front-end web application template for professional web development. 
 ---
 ## Prerequisites
 | Tables |
