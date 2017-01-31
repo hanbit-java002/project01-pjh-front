@@ -4,7 +4,6 @@ Pkjs Webapp Starter is a front-end web application template for professional web
 ## Prerequisites
 | Tables |
 | ------------- |
-
 |1. install [nodejs](http://nodejs.org)|
 |1. install gulp-cli|
 
