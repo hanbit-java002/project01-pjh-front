@@ -1,0 +1,136 @@
+@import 'lib/include.all.less';
+@import 'common.css';
+
+
+@media only screen and (max-width: 1440px) {
+	#shopping-cart { border: none !important;
+		width: 100% !important;}
+	#register {border: none !important;
+		width: 100% !important;}
+}
+
+
+#cart-layer {
+	position: relative;
+	width: 100%;
+	vertical-align: top;
+	margin-bottom: 7%;
+}
+
+#shopping-cart {
+	border-left: solid 1px gray;
+	width: 68%;
+	min-width: 680px;
+	padding: 0 2%;
+	margin-bottom: 20px;
+	display: inline-block;
+	top:0;
+}
+
+.shopping-header {
+	font-size: 24px;
+	margin-bottom: 2%;
+}
+
+#item-title {
+	margin-bottom: 2%;
+}
+
+#alpha {
+	display: inline-block;
+	width: auto;
+}
+
+.beta {
+	float : right;
+	display: inline-block;
+	width: 15%;
+	margin-left: 5%;
+	text-align: right;
+}
+
+#cart-item {
+	font-size: 20px;
+}
+
+#input-qtt-box {
+	width: 38px;
+	height: 35px;
+	text-align: center;
+}
+
+#cart-totals {
+	text-align: right;
+	border-top: solid 1px gray;
+	margin: 2% 0 8% 0;
+}
+
+#cart-totals>ul>li {
+	margin-top: 2%;
+}
+
+#cart-totals>ul>li:nth-child(2) {
+	font-size: 20px;
+	font-weight: 400;
+}
+#cart-totals>ul>li:nth-child(4) {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#code {
+	width: 200px;
+	height: 35px;
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+#buttons>input:hover {
+/*	background-color: #222222;*/
+	opacity: 0.5;
+}
+
+#buttons>input:first-child {
+	margin-left: 20px;
+	background-color: #c3c3c3;
+	color: white;
+	width:164px;
+	height: 31px;
+	border-radius: 15px;
+}
+#buttons>input:last-child {
+	margin-left: 20px;
+	background-color: #959595;
+	color: white;
+	width:86px;
+	height: 31px;
+	border-radius: 15px;
+}
+
+#register {
+	position: relative;
+	display:inline-block;
+	border-left: solid 1px gray;
+	width: 32%;
+	top:0;
+	padding: 0 2%;
+	vertical-align: top;
+}
+
+.res-input {
+	width: 100%;
+	height: 31px;
+	margin-bottom: 20px;
+}
+
+#continue-btn {
+	float: right;
+	background-color: #222222;
+	color: white;
+	width:86px;
+	height: 31px;
+	border-radius: 5px;
+}
+#continue-btn:hover {
+	opacity: 0.5;
+}

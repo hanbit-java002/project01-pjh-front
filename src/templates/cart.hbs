@@ -1,0 +1,48 @@
+{{> header title='Shopping Cart - Home' cssName='cart'}}
+<div id="main-container">
+	<div id="cart-layer">
+		<div id="shopping-cart">
+			<div class="shopping-header">Shopping Cart</div>
+			<div id="item-title">
+				<div id="alpha">Item Title</div>
+				<div class="beta">Line Total</div>
+				<div class="beta">Unit Price</div>
+				<div class="beta">Quantity</div>
+			</div>
+			<div id="cart-item">
+				<div id="alpha">Nourished Journal Four</div>
+				<div class="beta">25.00</div>
+				<div class="beta">25.00</div>
+				<div class="beta"><input id="input-qtt-box" type="number" value="1"></div>
+			</div>
+				<div id="cart-totals">
+					<ul>
+						<li>Shipping Total</li>
+						<li>$0.00</li>
+						<li>Order Total (inc Tax)</li>
+						<li>$25.00</li>
+					</ul>
+					<label>Discount Code</label><br>
+					<input id="code" type="text" value placeholder="Enter discount code">
+					<div id="buttons">
+						<input type="button" value="Continue Shopping" onClick="location.href='store.html'">
+						<input type="submit" value="Update">
+
+					</div>
+				</div>
+			</div>
+		<div id="register">
+			<div class="shopping-header">Register</div>
+				<p>Please ensure your email address is correct</p>
+				<input class="res-input" type="text" value placeholder="Email Address">
+				<p>Would you like to register an account? To save your account details for future purchases, simply enter as password below.</p>
+			<div>
+				<input class="res-input" type="text" value placeholder="Password">
+				<input class="res-input" type="text" value placeholder="Confirm Password">
+				<p>If not, simply leave the password fields blank to continue checkout as a guest.</p>
+				<input id="continue-btn" type="submit" value="continue">
+			</div>
+		</div>
+	</div>
+</div>
+{{> footer jsName='cart'}}

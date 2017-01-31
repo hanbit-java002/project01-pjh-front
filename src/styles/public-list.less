@@ -1,0 +1,60 @@
+@import 'lib/include.all.less';
+@import 'common.css';
+
+/*@media screen and (max-width: 1250px) {
+	.public-info { display: inline-block; }
+	.public-info { position: relative; }
+	.public-img-layer { position: relative; }
+	.public-layer { display: inline-block; }
+	.public-img-layer { display: inline-block; }
+}*/
+@media screen and (max-width: 1440px){
+.public-info {
+	position: relative;
+}
+}
+.public-layer {
+	position: relative;
+	width: 100%;
+	margin-bottom: 6%;
+}
+
+.public-img-layer {
+	width: 80%;
+	vertical-align: top;
+}
+
+.public-img {
+	width: 100%;
+}
+
+.public-info {
+	position: absolute;
+	max-width: 35%;
+	top: 3%;
+	right: 0;
+	padding: 2% 0 0 3%;
+}
+
+#public-info-text>ul>li:first-child {
+	font-size: 45px;
+	font-weight: bold;
+	margin-bottom: 3%;
+}
+
+#public-info-text>ul>li:nth-child(2) {
+	font-size: 25px;
+	font-weight: 400;
+	margin-bottom: 3%;
+}
+
+
+#purchase-btn {
+	text-align: center;
+	width: 105px;
+	height: 35px;
+	font-size: 14px;
+	color: white;
+	background-color: #323232;
+	border-radius: 5%;
+}
