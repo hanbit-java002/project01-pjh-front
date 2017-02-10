@@ -105,8 +105,16 @@
 	font-size: 30px;
 }
 
-
-
+////////////////////////////////////////////////////////////////
+/*.sign-up-layer {
+	position: absolute;
+	z-index: 9999;
+	width: 100%;
+	height: 100%;
+	top:0;
+	background-color: rgba(0, 0, 0, 0.4);
+	text-align: center;
+}*/
 
 
 
@@ -185,6 +193,19 @@
 }
 
 #log-in-btn {
+	display: inline-block;
+	width: 103px;
+	height: 30px;
+	color: white;
+	background-color: #959595;
+	border-radius: 5px;
+	margin: 14px;
+	border: 1px solid #c0c1c2;
+	font-size: 16px;
+}
+
+#sign-up-btn {
+	display: inline-block;
 	width: 103px;
 	height: 30px;
 	color: white;
@@ -198,16 +219,128 @@
 #lost-pass {
 	font-size: 16px;
 }
+/////////////////////////////////////////////////////////////////
+.block-layer {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.4;
+	z-index: 999;
+}
+
+.block-layer.ajax {
+	z-index: 999;
+}
+
+#sign-box {
+	position: fixed;
+	z-index: 9999;
+	width: 700px;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(255,255,255, 1);
+	padding: 40px 40px 40px 50px;
+	text-align: center;
+
+}
+
+#sign-text>ul>li:first-child {
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+#sign-text>ul>li:last-child {
+	font-size: 17px;
+	margin-bottom: 30px;
+}
+
+.sign-exit {
+	position: absolute;
+	right: 20px;
+	top:10px;
+	font-size: 30px;
+}
+
+#sign-btn-container {
+	text-align: center;
+}
+
+#sign-btn-container>input {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#user-id{
+	width: 345px;
+	height: 37px;
+	padding: 3px 15px 0px 15px;
+	margin-bottom: 18px;
+	color: #6c6c6c;
+}
+
+#user-password {
+	width: 345px;
+	height: 37px;
+	padding: 3px 15px 0px 15px;
+	margin-bottom: 18px;
+	color: #6c6c6c;
+	border: 1px solid #c0c1c2;
+	font-size: 16px;
+}
+#user-password-crm {
+	width: 345px;
+	height: 37px;
+	padding: 3px 15px 0px 15px;
+	margin-bottom: 18px;
+	color: #6c6c6c;
+	border: 1px solid #c0c1c2;
+	font-size: 16px;
+}
+
+#member-sign-up {
+	display: inline-block;
+	width: 103px;
+	height: 30px;
+	color: white;
+	background-color: #959595;
+	border-radius: 5px;
+	margin: 14px;
+	border: 1px solid #c0c1c2;
+	font-size: 16px;
+}
+
+#reset {
+	display: inline-block;
+	width: 103px;
+	height: 30px;
+	color: white;
+	background-color: #959595;
+	border-radius: 5px;
+	margin: 14px;
+	border: 1px solid #c0c1c2;
+	font-size: 16px;
+}
+
+#popup-close {
+	display: inline-block;
+	width: 103px;
+	height: 30px;
+	color: white;
+	background-color: #959595;
+	border-radius: 5px;
+	margin: 14px;
+	border: 1px solid #c0c1c2;
+	font-size: 16px;
+}
 
 
 
-
-
-
-
-
-
-
+//////////////////////////////////////////////////////////////////
 i{
 	cursor: pointer;
 }
