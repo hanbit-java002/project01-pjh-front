@@ -62,6 +62,9 @@ define([
 				sectionHTML += "</div>";
 			}
 			$(".item-box-layer").html(sectionHTML);
+			$(".item-box").on("click", function() {
+				location.href = "products.html";
+			});
 		}
 		else if (sectionCode === "journal") {
 			$(".item-box-layer").empty();
@@ -77,6 +80,9 @@ define([
 				sectionHTML += "</div>";
 			}
 			$(".item-box-layer").html(sectionHTML);
+			$(".item-box").on("click", function() {
+				location.href = "journal-list.html";
+			});
 		}
 		else if (sectionCode === "recent_post") {
 			$(".item-box-layer01").empty();
@@ -92,6 +98,9 @@ define([
 				sectionHTML += "</div>";
 			}
 			$(".item-box-layer01").html(sectionHTML);
+			$(".item-box-layer01>div").on("click", function() {
+				location.href = "journal-list.html";
+			});
 		}
 		else if (sectionCode === "publications") {
 			for (i = startIndex; i < endIndex; i++) {
@@ -108,6 +117,9 @@ define([
 				sectionHTML += "</div>";
 			}
 			$(".item-box-layer").html(sectionHTML);
+			$(".item-box").on("click", function() {
+				location.href = "public-list.html";
+			});
 		}
 	}
 
