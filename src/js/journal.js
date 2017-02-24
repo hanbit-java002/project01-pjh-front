@@ -1,5 +1,5 @@
 require([
-	"common",
-], function() {
-
+	"section",
+], function(section) {
+	section.initSection("journal");
 });

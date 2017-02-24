@@ -9,6 +9,7 @@ require.config({
         "clipboard"     : "/plugins/clipboard/clipboard.min",
 
         "common"        : "common",
+		"section"       : "section",
     },
 
     shim: {

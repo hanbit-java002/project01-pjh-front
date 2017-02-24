@@ -7,7 +7,7 @@
 	"statics": [
 		{
 			"location": "/",
-			"root": "/apps/pkjs-webapp-starter/dist"
+			"root": "/hanbit/webstormpjt/project01-front/dist"
 		}
 	],
 	"proxys": [

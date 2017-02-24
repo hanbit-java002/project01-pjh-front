@@ -122,7 +122,7 @@
 
 
 
-.login-layer {
+/*.login-layer {
 	display: none;
 	position: absolute;
 	z-index: 9999;
@@ -132,9 +132,18 @@
 	background-color: rgba(0, 0, 0, 0.7);
 	text-align: center;
 
+}*/
+.layer-popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	z-index: 100;
 }
 
-#login-box {
+
+/*.login-box {
 	position: fixed;
 	z-index: 9999;
 	width: 700px;
@@ -146,7 +155,7 @@
 	padding: 40px 40px 40px 50px;
 	text-align: center;
 
-}
+}*/
 
 #login-text>ul>li:first-child {
 	font-size: 25px;
@@ -157,12 +166,12 @@
 	margin-bottom: 30px;
 }
 
-.login-exit {
+/*.login-exit {
 	position: absolute;
 	right: 20px;
 	top:10px;
 	font-size: 30px;
-}
+}*/
 
 #login-btn-container {
 	text-align: center;
@@ -235,7 +244,7 @@
 	z-index: 999;
 }
 
-#sign-box {
+.sign-popup-box {
 	position: fixed;
 	z-index: 9999;
 	width: 700px;
@@ -258,7 +267,7 @@
 	margin-bottom: 30px;
 }
 
-.sign-exit {
+.exit {
 	position: absolute;
 	right: 20px;
 	top:10px;
@@ -273,6 +282,11 @@
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
+	width: 345px;
+	height: 37px;
+	padding: 3px 15px 0px 15px;
+	margin-bottom: 18px;
+	color: #6c6c6c;
 }
 
 #user-id{
@@ -313,7 +327,17 @@
 	border: 1px solid #c0c1c2;
 	font-size: 16px;
 }
-
+#member-info-update {
+	display: inline-block;
+	width: 103px;
+	height: 30px;
+	color: white;
+	background-color: #959595;
+	border-radius: 5px;
+	margin: 14px;
+	border: 1px solid #c0c1c2;
+	font-size: 16px;
+}
 #reset {
 	display: inline-block;
 	width: 103px;
@@ -326,7 +350,7 @@
 	font-size: 16px;
 }
 
-#popup-close {
+.popup-close {
 	display: inline-block;
 	width: 103px;
 	height: 30px;
@@ -462,6 +486,10 @@ header{
 	top: 38px;
 }
 
+#logout, #member-info {
+	display: none;
+}
+
 
 
 
@@ -504,13 +532,17 @@ header{
 	//margin-bottom: 82px;
 }
 
+.item-box-layer {
+
+}
+
 .item-box {
 	width: 31%;
 	display: inline-block;
 	vertical-align: top;
 	margin: 0% 2% 5% 0%;
 	/*min-width 지정 픽셀까지 줄어들다 inline-block*/
-	min-width: 350px;
+	/*min-width: 350px;*/
 	cursor: pointer;
 }
 
@@ -538,9 +570,9 @@ header{
 	color: #5a5b5e;
 }
 
-.item-img:hover {
+/*.item-img:hover {
 	opacity : 0.6;
-}
+}*/
 
 
 
