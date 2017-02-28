@@ -30,6 +30,10 @@ define([
 			items: [],
 			itemsPerPage: 24,
 		},
+		"cart": {
+			items: [],
+			itemsPerPage: 24,
+		},
 	};
 
 	function addSectionItems(sectionCode, page, items) {
@@ -120,6 +124,16 @@ define([
 			$(".item-box").on("click", function() {
 				location.href = "public-list.html";
 			});
+		}
+		else if (sectionCode === "cart") {
+			item = items[1];
+			sectionHTML += "<div id='cart-item'>";
+			sectionHTML += "<div id='alpha'>" + item.product_title + "</div>";
+			sectionHTML += "<div class='num' id='delta'>25.00</div>";
+			sectionHTML += "<div class='num' id='gamma'>" + item.product_price + "</div>";
+			sectionHTML += "<div class='num' id='beta'><input id='input-qtt-box' type='number' value=quantity></div>";
+			sectionHTML += "</div>";
+			$("#cart-contents").append(sectionHTML);
 		}
 	}
 

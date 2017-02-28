@@ -1,6 +1,7 @@
 define([
 	"bootstrap",
 ], 	function() {
+	document.cookie = "CartAccount=; path=/";
 	function attachEvents() {
 		$( ".item-img" ).off("mouseenter");
 		$( ".item-img" ).on("mouseenter", function() {
