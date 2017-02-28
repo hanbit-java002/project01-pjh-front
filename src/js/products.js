@@ -1,33 +1,11 @@
 require([
-	"cart",
-], function(cart) {
-	$("#product-cartin-btn").on("click", function() {
-		var	CartAccount = $("#product-cartin-btn").val();
-		cart.initCartItems("cart", CartAccount);
-		location.href = "cart.html";
-	});
-/* $("#product-cartin-btn").on("click", function() {
-	document.cookie = "cartAccount = 1";
-	gocart();
-});
-function gocart() {
-	var cookie = document.cookie;
-	$("#input-qtt-box").val(cookie);
-	location.href = "cart.html";
-}*/
-
-	/* document.cookie = "CartAccount=; path=/";
-	$("#product-cartin-btn").on("click", function() {
-	CartAccount = $("#product-cartin-btn").val();
-	section.initSection("cart");
-	location.href = "cart.html";
-	});
-
+	"section",
+], function(section) {
 	function setCookie(cname, cvalue, exdays) {
-	var d = new Date();
-	d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-	var expires = "expires="+d.toUTCString();
-	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		var expires = "expires="+d.toUTCString();
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 	}
 
 	function getCookie(cname) {
@@ -45,17 +23,25 @@ function gocart() {
 	return "";
 	}
 
-	function checkCookie() {
-	var user = getCookie("username");
-		if (user != "") {
-			alert("Welcome again " + user);
+	$("#product-cartin-btn").on("click", function() {
+		/* var cart = {
+			items: [{
+				item: "abc",
+				quantity: 3,
+			}, {
+				item: "dfdf",
+				quantity: 2,
+			}],
+		};*/
+		var account = $("#product-qtt-btn").val();
+		if (account != "" && account != null) {
+			setCookie("name", account, 365);
 		}
 		else {
-			user = prompt("Please enter your name:", "");
-			if (user != "" && user != null) {
-				setCookie("username", user, 365);
-			}
+			alert("Please Insert Quantity");
 		}
-	}
-	checkCookie();*/
+		section.initSection("cart");
+		location.href = "cart.html";
+	});
+	getCookie();
 });

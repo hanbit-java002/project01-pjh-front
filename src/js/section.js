@@ -32,7 +32,6 @@ define([
 		},
 		"cart": {
 			items: [],
-			itemsPerPage: 24,
 		},
 	};
 
@@ -129,10 +128,11 @@ define([
 			item = items[1];
 			sectionHTML += "<div id='cart-item'>";
 			sectionHTML += "<div id='alpha'>" + item.product_title + "</div>";
-			sectionHTML += "<div class='num' id='delta'>25.00</div>";
-			sectionHTML += "<div class='num' id='gamma'>" + item.product_price + "</div>";
-			sectionHTML += "<div class='num' id='beta'><input id='input-qtt-box' type='number' value=quantity></div>";
+			sectionHTML += "<div class='num' id='delta'>" + item.product_price + "</div>";
+			sectionHTML += "<div class='num' id='gamma'>00</div>";
+			sectionHTML += "<div class='num' id='beta'><input id='input-qtt-box' type='number' value=''></div>";
 			sectionHTML += "</div>";
+			document.getElementById("#input-qtt-box").value = CartAccount;
 			$("#cart-contents").append(sectionHTML);
 		}
 	}
@@ -148,6 +148,33 @@ define([
 			},
 		});
 	}
+	/* function addCartItems(items) {
+		if (items) {
+			sectionInfo[sectionCode].items = items;
+		}
+		else {
+			items = sectionInfo[sectionCode].items;
+		}
+		var sectionHTML = "";
+		sectionHTML += "<div id='cart-item'>";
+		sectionHTML += "<div id='alpha'>" + item.product_title + "</div>";
+		sectionHTML += "<div class='num' id='delta'>" + item.product_price + "</div>";
+		sectionHTML += "<div class='num' id='gamma'>00</div>";
+		sectionHTML += "<div class='num' id='beta'><input id='input-qtt-box' type='number' value=''></div>";
+		sectionHTML += "</div>";
+		document.getElementById("#input-qtt-box").value = CartAccount;
+		$("#cart-contents").append(sectionHTML);
+	}
+	function initCartItems(sectionCode) {
+		var url = "";
+		url += "/api/main/section/" + sectionCode + "/items";
+		$.ajax({
+			url: url,
+			success: function(items) {
+				addCartItems(items);
+			},
+		});
+	}*/
 
 	return {
 		initSection: initSection,
