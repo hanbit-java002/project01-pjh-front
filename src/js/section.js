@@ -30,6 +30,10 @@ define([
 			items: [],
 			itemsPerPage: 24,
 		},
+		"products": {
+			items: [],
+			itemsPerPage: 1,
+		},
 		"cart": {
 			items: [],
 		},
@@ -60,7 +64,7 @@ define([
 				sectionHTML += "<ul>";
 				sectionHTML += "<li class='item-name'>" + item.product_title + "</li>";
 				sectionHTML += "<li>" + item.product_description + "</li>";
-				sectionHTML += "<li>" + item.product_price + "</li>";
+				sectionHTML += "<li>" + item.product_price + " USD" + "</li>";
 				sectionHTML += "</ul>";
 				sectionHTML += "</div>";
 			}
@@ -124,19 +128,39 @@ define([
 				location.href = "public-list.html";
 			});
 		}
+		else if (sectionCode === "products") {
+			$(".products-info").empty();
+			for (i = startIndex; i < endIndex; i++) {
+				item = items[i];
+				sectionHTML += "<div id='info-text'>";
+				sectionHTML += "<ul>";
+				sectionHTML += "<li>" + item.product_title + "</li>";
+				sectionHTML += "<li>" + item.product_description + "</li>";
+				sectionHTML += "<li>" + item.product_text + "</li>";
+				sectionHTML += "</ul>";
+				sectionHTML += "<div>";
+				sectionHTML += "<div id='USD'>" + item.product_price + "</div>";
+				sectionHTML += "<div id='qtt'>Quantity</div>";
+				sectionHTML += "<input id='product-qtt-btn' type='text' value='1'>";
+				sectionHTML += "<input id='product-cartin-btn' type='submit' value='Add To Cart'>";
+				sectionHTML += "</div>";
+			}
+			$(".products-info").html(sectionHTML);
+			common.qtt();
+		}
 		else if (sectionCode === "cart") {
+			var cartQuantity = common.getCookie("quantity");
 			item = items[1];
 			sectionHTML += "<div id='cart-item'>";
 			sectionHTML += "<div id='alpha'>" + item.product_title + "</div>";
 			sectionHTML += "<div class='num' id='delta'>" + item.product_price + "</div>";
-			sectionHTML += "<div class='num' id='gamma'>00</div>";
+			sectionHTML += "<div class='num' id='gamma'>" + item.product_price + "</div>";
 			sectionHTML += "<div class='num' id='beta'><input id='input-qtt-box' type='number' value=''></div>";
 			sectionHTML += "</div>";
-			document.getElementById("#input-qtt-box").value = CartAccount;
 			$("#cart-contents").append(sectionHTML);
+			$("#input-qtt-box").val(cartQuantity);
 		}
 	}
-
 	function initSection(sectionCode) {
 		var url = "";
 		url += "/api/main/section/" + sectionCode + "/items";

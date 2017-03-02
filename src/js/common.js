@@ -1,19 +1,51 @@
 define([
 	"bootstrap",
 ], 	function() {
-	document.cookie = "CartAccount=; path=/";
+	function setCookie(cname, cvalue, exdays) {
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		var expires = "expires="+d.toUTCString();
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(";");
+		for(var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == " ") {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
 	function attachEvents() {
-		$( ".item-img" ).off("mouseenter");
-		$( ".item-img" ).on("mouseenter", function() {
+		$(".item-img").off("mouseenter");
+		$(".item-img").on("mouseenter", function() {
 			$( this ).fadeTo( "fast", 0.6 );
 		});
 
-		$( ".item-img" ).off("mouseleave");
-		$( ".item-img" ).on("mouseleave", function() {
+		$(".item-img").off("mouseleave");
+		$(".item-img").on("mouseleave", function() {
 			$( this ).fadeTo( "fast", 1 );
 		});
 	}
-
+	function qtt() {
+		$("#product-cartin-btn").on("click", function() {
+			var account = $("#product-qtt-btn").val();
+			if (account != "" && account != null) {
+				setCookie("quantity", account, 365);
+				alert(getCookie("quantity"));
+				location.href = "cart.html";
+			}
+			else {
+				alert("Please Insert Quantity");
+			}
+		});
+	}
 	var popupCssSelector = "";
 
 	function closeLayerPopup() {
@@ -356,8 +388,13 @@ define([
 	togglerHeader();
 	handleEvents();
 	checkSignedIn();
+	setCookie();
+	getCookie();
 
 	return {
 		attachEvents: attachEvents,
+		setCookie: setCookie,
+		getCookie: getCookie,
+		qtt: qtt,
 	};
 });
