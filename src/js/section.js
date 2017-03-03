@@ -69,8 +69,13 @@ define([
 				sectionHTML += "</div>";
 			}
 			$(".item-box-layer").html(sectionHTML);
-			$(".item-box").on("click", function() {
+			/* $(".item-box").on("click", function() {
 				location.href = "products.html";
+			});*/
+			$(".item-box-layer").on("click", function() {
+				var url = "products.html";
+				url += "?id="+$(this).attr("id");
+				location.href = url;
 			});
 		}
 		else if (sectionCode === "journal") {
