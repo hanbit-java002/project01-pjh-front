@@ -136,7 +136,20 @@ define([
 				sectionHTML += "<ul>";
 				sectionHTML += "<li>" + item.product_title + "</li>";
 				sectionHTML += "<li>" + item.product_description + "</li>";
-				sectionHTML += "<li>" + item.product_text + "</li>";
+				sectionHTML += "<li><p>We are proud to announce the release of Nourished Journal Edition Four.</p>";
+				sectionHTML += "<p>Some features include April Gargiulo from Vintner’s Daughter, Lacy Philips from" +
+					" Free + Native shares her manifestation practice, Jacqui Lewis from The Broad Place talks" +
+					" travel, recipe for a warming turmeric bread from Sweet Laurel, a beginners guide to Ayurveda," +
+					" Zen & Bunni from Zenbunni, understanding your dreams, Kari Jansen from Poppy and Someday, the" +
+					" importance of getting grounded and we visit the iconic Californian retreat Esalen.</p>";
+				sectionHTML += "<p>Nourished Journal is a bi-annual lifestyle publication. The aim of the Journal" +
+					" is not only to create an inspiring publication, but also to be a platform for readers and" +
+					" contributors alike to share, learn and connect. Featuring interviews with inspiring " +
+					"individuals, uplifting and informative editorial, recipes, travel stories and practical " +
+					"information on health and wellbeing. We believe in taking a holistic view on life, which you " +
+					"will see reflected throughout the journal.</p>";
+				sectionHTML += "<br><p>Product Notes<br>";
+				sectionHTML += "Free shipping worldwide from Berlin, Germany.<p></li>";
 				sectionHTML += "</ul>";
 				sectionHTML += "<div>";
 				sectionHTML += "<div id='USD'>" + item.product_price + "</div>";
