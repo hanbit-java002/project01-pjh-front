@@ -157,7 +157,7 @@ define([
 				sectionHTML += "Free shipping worldwide from Berlin, Germany.<p></li>";
 				sectionHTML += "</ul>";
 				sectionHTML += "<div>";
-				sectionHTML += "<div id='USD'>" + item.product_price + "</div>";
+				sectionHTML += "<div id='USD'>$ " + item.product_price + " USD</div>";
 				sectionHTML += "<div id='qtt'>Quantity</div>";
 				sectionHTML += "<input id='product-qtt-btn' type='text' value='1'>";
 				sectionHTML += "<input id='product-cartin-btn' type='submit' value='Add To Cart'>";
@@ -167,11 +167,13 @@ define([
 			common.qtt();
 		}
 		else if (sectionCode === "cart") {
-			var cartQuantity = common.getCookie("quantity");
 			item = items[1];
+			var cartQuantity = common.getCookie("quantity");
+			var price = item.product_price;
+			var result = parseFloat(price) * parseFloat(cartQuantity);
 			sectionHTML += "<div id='cart-item'>";
 			sectionHTML += "<div id='alpha'>" + item.product_title + "</div>";
-			sectionHTML += "<div class='num' id='delta'>" + item.product_price + "</div>";
+			sectionHTML += "<div class='num' id='delta'>" + result + "</div>";
 			sectionHTML += "<div class='num' id='gamma'>" + item.product_price + "</div>";
 			sectionHTML += "<div class='num' id='beta'><input id='input-qtt-box' type='number' value=''></div>";
 			sectionHTML += "</div>";

@@ -385,6 +385,7 @@ define([
 		$("body").css("overflow", "");
 	};
 
+	cartshow();
 	togglerHeader();
 	handleEvents();
 	checkSignedIn();
