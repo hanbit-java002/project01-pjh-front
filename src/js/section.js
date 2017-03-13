@@ -58,8 +58,7 @@ define([
 			$(".item-box-layer").empty();
 			for (i = startIndex; i < endIndex; i++) {
 				item = items[i];
-
-				sectionHTML += "<div class='item-box'>";
+				sectionHTML += "<div class='item-box''" + item.product_code + "'>";
 				sectionHTML += "<img class='item-img' src='" + item.product_img + "'>";
 				sectionHTML += "<ul>";
 				sectionHTML += "<li class='item-name'>" + item.product_title + "</li>";
@@ -137,6 +136,7 @@ define([
 			$(".products-info").empty();
 			for (i = startIndex; i < endIndex; i++) {
 				item = items[i];
+
 				sectionHTML += "<div id='info-text'>";
 				sectionHTML += "<ul>";
 				sectionHTML += "<li>" + item.product_title + "</li>";
@@ -162,6 +162,7 @@ define([
 				sectionHTML += "<input id='product-qtt-btn' type='text' value='1'>";
 				sectionHTML += "<input id='product-cartin-btn' type='submit' value='Add To Cart'>";
 				sectionHTML += "</div>";
+				sectionHTML += "</div>";
 			}
 			$(".products-info").html(sectionHTML);
 			common.qtt();
@@ -183,7 +184,7 @@ define([
 	}
 	function initSection(sectionCode) {
 		var url = "";
-		url += "/api/main/section/" + sectionCode + "/items";
+		url += "/api/main/section/" + sectionCode;
 		$.ajax({
 			url: url,
 			success: function(items) {
