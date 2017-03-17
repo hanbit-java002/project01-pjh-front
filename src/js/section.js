@@ -58,7 +58,7 @@ define([
 			$(".item-box-layer").empty();
 			for (i = startIndex; i < endIndex; i++) {
 				item = items[i];
-				sectionHTML += "<div class='item-box''" + item.product_code + "'>";
+				sectionHTML += "<div class='item-box'" +"item-box="+ item.product_code + ">";
 				sectionHTML += "<img class='item-img' src='" + item.product_img + "'>";
 				sectionHTML += "<ul>";
 				sectionHTML += "<li class='item-name'>" + item.product_title + "</li>";
@@ -71,10 +71,11 @@ define([
 			/* $(".item-box").on("click", function() {
 				location.href = "products.html";
 			});*/
-			$(".item-box-layer").on("click", function() {
+			$(".item-box").on("click", function() {
 				var url = "products.html";
-				url += "?id="+$(this).attr("id");
+				url += "?code="+$(this).attr("item-box");
 				location.href = url;
+				/* productsSection($(this).attr("item-box"));*/
 			});
 		}
 		else if (sectionCode === "journal") {
@@ -132,10 +133,10 @@ define([
 				location.href = "public-list.html";
 			});
 		}
-		else if (sectionCode === "products") {
+		/* else if (sectionCode === "products") {
 			$(".products-info").empty();
-			for (i = startIndex; i < endIndex; i++) {
-				item = items[i];
+
+				item = items[0];
 
 				sectionHTML += "<div id='info-text'>";
 				sectionHTML += "<ul>";
@@ -154,7 +155,7 @@ define([
 					"information on health and wellbeing. We believe in taking a holistic view on life, which you " +
 					"will see reflected throughout the journal.</p>";
 				sectionHTML += "<br><p>Product Notes<br>";
-				sectionHTML += "Free shipping worldwide from Berlin, Germany.<p></li>";
+				sectionHTML += "Free shopping worldwide from Berlin, Germany.<p></li>";
 				sectionHTML += "</ul>";
 				sectionHTML += "<div>";
 				sectionHTML += "<div id='USD'>$ " + item.product_price + " USD</div>";
@@ -163,10 +164,10 @@ define([
 				sectionHTML += "<input id='product-cartin-btn' type='submit' value='Add To Cart'>";
 				sectionHTML += "</div>";
 				sectionHTML += "</div>";
-			}
+
 			$(".products-info").html(sectionHTML);
 			common.qtt();
-		}
+		}*/
 		else if (sectionCode === "cart") {
 			item = items[1];
 			var cartQuantity = common.getCookie("quantity");
@@ -190,6 +191,47 @@ define([
 			success: function(items) {
 				addSectionItems(sectionCode, 1, items);
 				common.attachEvents();
+			},
+		});
+	}
+
+	function productsSection(Code) {
+		var productsCode = Code;
+		var sectionHTML = "";
+
+		$.ajax({
+			url: "/api/main/products/" + productsCode,
+			success: function(item) {
+				sectionHTML += "<div id='info-text'>";
+				sectionHTML += "<ul>";
+				sectionHTML += "<li>" + item.product_title + "</li>";
+				sectionHTML += "<li>" + item.product_description + "</li>";
+				sectionHTML += "<li>" + item.product_text + "</li>";
+				/* sectionHTML += "<li><p>We are proud to announce the release of Nourished Journal Edition Four.</p>";
+				sectionHTML += "<p>Some features include April Gargiulo from Vintner’s Daughter, Lacy Philips from" +
+					" Free + Native shares her manifestation practice, Jacqui Lewis from The Broad Place talks" +
+					" travel, recipe for a warming turmeric bread from Sweet Laurel, a beginners guide to Ayurveda," +
+					" Zen & Bunni from Zenbunni, understanding your dreams, Kari Jansen from Poppy and Someday, the" +
+					" importance of getting grounded and we visit the iconic Californian retreat Esalen.</p>";
+				sectionHTML += "<p>Nourished Journal is a bi-annual lifestyle publication. The aim of the Journal" +
+					" is not only to create an inspiring publication, but also to be a platform for readers and" +
+					" contributors alike to share, learn and connect. Featuring interviews with inspiring " +
+					"individuals, uplifting and informative editorial, recipes, travel stories and practical " +
+					"information on health and wellbeing. We believe in taking a holistic view on life, which you " +
+					"will see reflected throughout the journal.</p>";*/
+				sectionHTML += "<br><p>Product Notes<br>";
+				sectionHTML += "Free shipping worldwide from Berlin, Germany.<p></li>";
+				sectionHTML += "</ul>";
+				sectionHTML += "<div>";
+				sectionHTML += "<div id='USD'>$ " + item.product_price + " USD</div>";
+				sectionHTML += "<div id='qtt'>Quantity</div>";
+				sectionHTML += "<input id='product-qtt-btn' type='text' value='1'>";
+				sectionHTML += "<input id='product-cartin-btn' type='submit' value='Add To Cart'>";
+				sectionHTML += "</div>";
+				sectionHTML += "</div>";
+
+				$(".products-info").html(sectionHTML);
+				common.qtt();
 			},
 		});
 	}
@@ -223,5 +265,6 @@ define([
 
 	return {
 		initSection: initSection,
+		productsSection: productsSection,
 	};
 });

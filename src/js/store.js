@@ -13,5 +13,9 @@ require([
 		section.initSection("pero");
 	});
 
+	$(".item-box").on("click", function() {
+		section.productsSection($(this).attr("item-box"));
+	});
+
 	section.initSection("store");
 });
