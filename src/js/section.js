@@ -194,7 +194,6 @@ define([
 			},
 		});
 	}
-
 	function productsSection(Code) {
 		var productsCode = Code;
 		var sectionHTML = "";
